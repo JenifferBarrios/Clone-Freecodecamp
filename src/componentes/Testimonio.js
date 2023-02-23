@@ -1,17 +1,15 @@
 import React from "react";
 import '../hojas-estilos-css/Testimonio.css';
-function Testimonio() {
+function Testimonio(props) {
   return (
     <div className='contenedor-testimonio'>
       <img className='imagen-testimonio'
-        src={require('../images/mujer1.jpg')}
+        src={require(`../images/${props.imagen}.jpg`)}
         alt='Foto de mujer' />
         <div className='contenedor-texto-testimonio'>
-        <p className="nombre-testimonio"> Ada LoveLace</p>
-        <p className="cargo-testimonio"> La primera programadora informática del mundo</p>
-        <p className="texto-testimonio"> Nacida en 1815,  fue una una matemática
-          en la época victoriana conocida por sus significativos   aportes a la computadora
-          mecánica y el motor analítico creado por Charles Babbage.</p>
+        <p className="nombre-testimonio"><strong>{props.nombre}</strong> en {props.pais}</p>
+        <p className="cargo-testimonio"> {props.cargo} en <strong>{props.empresa}</strong></p>
+        <p className="texto-testimonio"> {props.testimonio}</p>
       </div>
     </div>
   );
